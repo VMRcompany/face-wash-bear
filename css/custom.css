@@ -171,6 +171,33 @@ body::before {
   transform: none;
 }
 
+.service-tabs {
+  scrollbar-width: none;
+}
+
+.service-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tab-btn.is-active {
+  background: var(--mint-700);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(61, 143, 117, 0.22);
+}
+
+.tab-panel {
+  animation: riseIn 0.45s ease both;
+}
+
+.flag-badge {
+  letter-spacing: 0.14em;
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-14px); }
