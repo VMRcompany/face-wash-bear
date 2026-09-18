@@ -221,17 +221,15 @@
           <p class="mt-5 text-base leading-relaxed text-ink/70">Пять направлений ухода — от очищения до лифтинга и точечных методик, которые усиливают основной протокол.</p>
         </div>
 
-        <div class="reveal mt-10 -mx-5 overflow-x-auto px-5 lg:mx-0 lg:overflow-visible lg:px-0" role="tablist" aria-label="Категории услуг">
-          <div class="service-tabs flex min-w-max gap-2 lg:min-w-0 lg:flex-wrap lg:justify-center">
-            <button type="button" class="tab-btn is-active rounded-full bg-white px-4 py-2.5 text-sm font-medium text-ink ring-1 ring-mint-200" role="tab" aria-selected="true" aria-controls="cat-cleanse" id="tab-cleanse">Очищение кожи</button>
-            <button type="button" class="tab-btn rounded-full bg-white px-4 py-2.5 text-sm font-medium text-ink ring-1 ring-mint-200" role="tab" aria-selected="false" aria-controls="cat-pro" id="tab-pro">Профессиональный уход</button>
-            <button type="button" class="tab-btn rounded-full bg-white px-4 py-2.5 text-sm font-medium text-ink ring-1 ring-mint-200" role="tab" aria-selected="false" aria-controls="cat-lift" id="tab-lift">Коррекция овала и лифтинг</button>
-            <button type="button" class="tab-btn rounded-full bg-white px-4 py-2.5 text-sm font-medium text-ink ring-1 ring-mint-200" role="tab" aria-selected="false" aria-controls="cat-problem" id="tab-problem">Проблемная кожа</button>
-            <button type="button" class="tab-btn rounded-full bg-white px-4 py-2.5 text-sm font-medium text-ink ring-1 ring-mint-200" role="tab" aria-selected="false" aria-controls="cat-extra" id="tab-extra">Дополнительные системы</button>
-          </div>
+        <div id="service-tabs" class="relative z-10 mt-10 flex flex-wrap justify-center gap-2" role="tablist" aria-label="Категории услуг">
+          <button type="button" class="tab-btn is-active rounded-full bg-white px-4 py-2.5 text-sm text-ink ring-1 ring-mint-200" data-category="cat-cleanse" onclick="openServiceTab('cat-cleanse')" aria-selected="true">1 БЛОК: Очищение кожи</button>
+          <button type="button" class="tab-btn rounded-full bg-white px-4 py-2.5 text-sm font-medium text-ink ring-1 ring-mint-200" data-category="cat-pro" onclick="openServiceTab('cat-pro')" aria-selected="false">2 БЛОК: Профессиональный уход</button>
+          <button type="button" class="tab-btn rounded-full bg-white px-4 py-2.5 text-sm font-medium text-ink ring-1 ring-mint-200" data-category="cat-lift" onclick="openServiceTab('cat-lift')" aria-selected="false">3 БЛОК: Коррекция овала и лифтинг</button>
+          <button type="button" class="tab-btn rounded-full bg-white px-4 py-2.5 text-sm font-medium text-ink ring-1 ring-mint-200" data-category="cat-problem" onclick="openServiceTab('cat-problem')" aria-selected="false">4 БЛОК: Проблемная кожа</button>
+          <button type="button" class="tab-btn rounded-full bg-white px-4 py-2.5 text-sm font-medium text-ink ring-1 ring-mint-200" data-category="cat-extra" onclick="openServiceTab('cat-extra')" aria-selected="false">5 БЛОК: Дополнительные системы</button>
         </div>
 
-        <div id="cat-cleanse" class="tab-panel mt-12" role="tabpanel" aria-labelledby="tab-cleanse">
+        <div id="cat-cleanse" class="tab-panel is-open mt-12" role="tabpanel">
           <div class="mx-auto max-w-3xl text-center">
             <h3 class="font-serif text-3xl sm:text-4xl">Очищение кожи</h3>
             <p class="mt-4 text-sm leading-relaxed text-ink/70 sm:text-base">Удаление поверхностных загрязнений (пыль, пот, остатки косметики); удаление излишков себума, ороговевших клеток, подготовка кожи к дальнейшему уходу; укрепление гидролипидного барьера кожи.</p>
@@ -260,7 +258,7 @@
           </div>
         </div>
 
-        <div id="cat-pro" class="tab-panel mt-12 hidden" role="tabpanel" aria-labelledby="tab-pro">
+        <div id="cat-pro" class="tab-panel mt-12" role="tabpanel">
           <div class="mx-auto max-w-3xl text-center">
             <h3 class="font-serif text-3xl sm:text-4xl">Профессиональный уход</h3>
             <p class="mt-4 text-sm leading-relaxed text-ink/70 sm:text-base">Профессиональные концентраты и сыворотки, аппаратные методики и глубина воздействия; решение конкретных проблем.</p>
@@ -299,7 +297,7 @@
           </div>
         </div>
 
-        <div id="cat-lift" class="tab-panel mt-12 hidden" role="tabpanel" aria-labelledby="tab-lift">
+        <div id="cat-lift" class="tab-panel mt-12" role="tabpanel">
           <div class="mx-auto max-w-3xl text-center">
             <h3 class="font-serif text-3xl sm:text-4xl">Коррекция овала лица и лифтинг</h3>
             <p class="mt-4 text-sm leading-relaxed text-ink/70 sm:text-base">Стимуляция коллагеногенеза с эффектом подтяжки; повышение тургора и тонуса кожи.</p>
@@ -344,7 +342,7 @@
           </div>
         </div>
 
-        <div id="cat-problem" class="tab-panel mt-12 hidden" role="tabpanel" aria-labelledby="tab-problem">
+        <div id="cat-problem" class="tab-panel mt-12" role="tabpanel">
           <div class="mx-auto max-w-3xl text-center">
             <h3 class="font-serif text-3xl sm:text-4xl">Профессиональный уход за проблемной кожей</h3>
             <p class="mt-4 text-sm leading-relaxed text-ink/70 sm:text-base">Анти-акне, сужение пор, снятие воспалений, успокоение кожи, антистресс кожи, контроль выработки себума.</p>
@@ -366,7 +364,7 @@
           </div>
         </div>
 
-        <div id="cat-extra" class="tab-panel mt-12 hidden" role="tabpanel" aria-labelledby="tab-extra">
+        <div id="cat-extra" class="tab-panel mt-12" role="tabpanel">
           <div class="mx-auto max-w-3xl text-center">
             <h3 class="font-serif text-3xl sm:text-4xl">Дополнительные системы к основным процедурам</h3>
             <p class="mt-4 text-sm leading-relaxed text-ink/70 sm:text-base">Целенаправленные методики, аппараты или составы, которые подключают к основному протоколу, чтобы усилить или закрепить результат.</p>
@@ -539,5 +537,21 @@
   </div>
 
   <script src="js/main.js"></script>
+  <script>
+    function openServiceTab(categoryId) {
+      var buttons = document.querySelectorAll(".tab-btn");
+      var panels = document.querySelectorAll(".tab-panel");
+      for (var i = 0; i < buttons.length; i++) {
+        var on = buttons[i].getAttribute("data-category") === categoryId;
+        buttons[i].classList.toggle("is-active", on);
+        buttons[i].setAttribute("aria-selected", on ? "true" : "false");
+      }
+      for (var j = 0; j < panels.length; j++) {
+        panels[j].classList.toggle("is-open", panels[j].id === categoryId);
+      }
+    }
+
+    openServiceTab("cat-cleanse");
+  </script>
 </body>
 </html>

@@ -52,21 +52,4 @@
   );
 
   document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-
-  const tabButtons = [...document.querySelectorAll(".tab-btn")];
-  const tabPanels = [...document.querySelectorAll(".tab-panel")];
-
-  tabButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const target = button.getAttribute("aria-controls");
-      tabButtons.forEach((item) => {
-        const active = item === button;
-        item.classList.toggle("is-active", active);
-        item.setAttribute("aria-selected", String(active));
-      });
-      tabPanels.forEach((panel) => {
-        panel.classList.toggle("hidden", panel.id !== target);
-      });
-    });
-  });
 })();
