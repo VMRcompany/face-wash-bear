@@ -245,18 +245,27 @@ body::before {
   list-style: none;
 }
 
-.utp-icon {
-  width: 52px;
-  height: 52px;
-  flex-shrink: 0;
-  object-fit: contain;
+.utp-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
 }
 
-@media (max-width: 639px) {
-  .utp-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.utp-icon-wrap {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.utp-icon {
+  display: block;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 @keyframes float {
