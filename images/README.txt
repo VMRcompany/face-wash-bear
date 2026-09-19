@@ -5,6 +5,7 @@ images/hero-bg.jpg      — главное фото Hero (сыворотка и 
 images/about.jpg        — интерьер или процедура, 1000×1200
 images/about-brand.png  — фото раздела «О бренде / Наши преимущества»
 images/service-1.jpg    — «Пузырьковое очищение кожи», 1200×900
+images/bubble-clean.png — «Пузырьковое очищение кожи» (актуальное фото)
 images/service-2.jpg    — «СПА для лица», 1200×900
 images/service-3.jpg    — «Супер увлажнение», 1200×900
 images/service-4.jpg    — «Сияние», 1200×900
