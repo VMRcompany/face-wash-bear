@@ -93,6 +93,15 @@ body::before {
   transform: translateX(120%);
 }
 
+a[href^="tel:"] {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.phone-link {
+  text-decoration: none;
+}
+
 header, main, footer {
   position: relative;
   z-index: 2;
