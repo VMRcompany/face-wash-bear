@@ -306,6 +306,11 @@ header, main, footer {
   }
 }
 
+.service-sebocontrol-photo {
+  object-fit: cover;
+  object-position: center 35%;
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-14px); }
