@@ -16,6 +16,7 @@ images/super-hydration.png — «Супер увлажнение» (актуал
 images/service-4.jpg    — «Сияние», 1200×900
 images/service-shining.png — «Сияние» (актуальное фото)
 images/service-5.jpg    — «Шой-ду-ду увлажнение и питание», 1200×900
+images/service-shoydudu.png — «Шой-ду-ду увлажнение и питание» (актуальное фото)
 images/service-6.jpg    — «Пилатес для лица», 1200×900
 images/service-7.jpg    — «Сияющий взгляд» (флагман), 1200×900
 images/service-8.jpg    — «4 D коллагеновый лифтинг» (флагман), 1200×900
