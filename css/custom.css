@@ -36,6 +36,16 @@ body::before {
   backdrop-filter: blur(18px);
 }
 
+.site-header a[href="#hero"] img {
+  height: 46px;
+  width: auto;
+  max-height: 46px;
+  border-radius: 10px;
+  object-fit: contain;
+  object-position: center top;
+  box-shadow: none;
+}
+
 .nav-link {
   position: relative;
 }
