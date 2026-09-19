@@ -11,6 +11,7 @@ images/spa-facial.png   — «СПА для лица» (актуальное ф�
 images/utp-effectiveness.png — иконка панды для «Эффективности»
 images/utp-safety.png        — иконка панды для «Безопасности»
 images/utp-convenience.png   — иконка панды для «Удобства»
+images/partnership-reception.png — фото ресепшена в блоке партнерства
 images/service-3.jpg    — «Супер увлажнение», 1200×900
 images/super-hydration.png — «Супер увлажнение» (актуальное фото)
 images/service-4.jpg    — «Сияние», 1200×900
