@@ -7,6 +7,7 @@ images/about-brand.png  — фото раздела «О бренде / Наши
 images/service-1.jpg    — «Пузырьковое очищение кожи», 1200×900
 images/bubble-clean.png — «Пузырьковое очищение кожи» (актуальное фото)
 images/service-2.jpg    — «СПА для лица», 1200×900
+images/spa-facial.png   — «СПА для лица» (актуальное фото)
 images/service-3.jpg    — «Супер увлажнение», 1200×900
 images/service-4.jpg    — «Сияние», 1200×900
 images/service-5.jpg    — «Шой-ду-ду увлажнение и питание», 1200×900
