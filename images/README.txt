@@ -8,6 +8,9 @@ images/service-1.jpg    — «Пузырьковое очищение кожи»
 images/bubble-clean.png — «Пузырьковое очищение кожи» (актуальное фото)
 images/service-2.jpg    — «СПА для лица», 1200×900
 images/spa-facial.png   — «СПА для лица» (актуальное фото)
+images/utp-effectiveness.png — иконка панды для «Эффективности»
+images/utp-safety.png        — иконка панды для «Безопасности»
+images/utp-convenience.png   — иконка панды для «Удобства»
 images/service-3.jpg    — «Супер увлажнение», 1200×900
 images/service-4.jpg    — «Сияние», 1200×900
 images/service-5.jpg    — «Шой-ду-ду увлажнение и питание», 1200×900

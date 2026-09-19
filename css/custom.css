@@ -239,6 +239,26 @@ body::before {
   border-radius: 1.8rem 1.8rem 0 0;
 }
 
+.utp-list {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.utp-icon {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+@media (max-width: 639px) {
+  .utp-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-14px); }
