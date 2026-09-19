@@ -3,6 +3,7 @@
 images/logo.png         — логотип (мордочка панды)
 images/hero-bg.jpg      — главное фото Hero (сыворотка и панда)
 images/about.jpg        — интерьер или процедура, 1000×1200
+images/about-brand.png  — фото раздела «О бренде / Наши преимущества»
 images/service-1.jpg    — «Пузырьковое очищение кожи», 1200×900
 images/service-2.jpg    — «СПА для лица», 1200×900
 images/service-3.jpg    — «Супер увлажнение», 1200×900
