@@ -89,24 +89,27 @@
       return;
     }
 
+    const nameInput = form.querySelector('input[name="name"]');
     const button = form.querySelector('button[type="submit"]');
     if (button) button.disabled = true;
 
-    const data = new FormData(form);
-    data.append("email_to", "elena@face-wash-bear.ru");
-
-    fetch("https://formsubmit.co/ajax/elena@face-wash-bear.ru", {
+    fetch(form.action, {
       method: "POST",
-      headers: { Accept: "application/json" },
-      body: data
-    })
-      .then(function () {
-        form.reset();
-        showThanks();
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        name: nameInput ? nameInput.value : "",
+        phone: phone.value,
+        _subject: "Заявка с сайта FACE WASH BEAR"
       })
-      .catch(function () {
-        form.reset();
-        showThanks();
+    })
+      .then(function (response) {
+        if (response.ok) {
+          form.reset();
+          showThanks();
+        }
       })
       .finally(function () {
         if (button) button.disabled = false;
