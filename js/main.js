@@ -72,27 +72,21 @@
 })();
 
 (() => {
-  const banner = document.getElementById("cookie-banner");
-  const accept = document.getElementById("cookie-accept");
-  const close = document.getElementById("cookie-close");
-  if (!banner || !accept) return;
+  const popup = document.getElementById("cookie-popup");
+  const ok = document.getElementById("cookie-popup-ok");
+  if (!popup || !ok) return;
 
-  const hideBanner = function () {
-    window.localStorage.setItem("cookie_accepted", "true");
-    banner.classList.remove("is-visible");
-    banner.classList.add("is-hidden");
-  };
-
-  if (window.localStorage.getItem("cookie_accepted") === "true") {
-    banner.classList.add("is-hidden");
+  if (window.localStorage.getItem("cookie_form_accepted") === "true") {
+    popup.style.display = "none";
     return;
   }
 
-  window.requestAnimationFrame(function () {
-    banner.classList.add("is-visible");
+  ok.addEventListener("click", function () {
+    window.localStorage.setItem("cookie_form_accepted", "true");
+    popup.style.opacity = "0";
+    window.setTimeout(function () {
+      popup.style.display = "none";
+    }, 350);
   });
-
-  accept.addEventListener("click", hideBanner);
-  if (close) close.addEventListener("click", hideBanner);
 })();
 
