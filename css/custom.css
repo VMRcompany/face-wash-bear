@@ -462,6 +462,49 @@ header, main, footer {
   transform: translateY(-1px);
 }
 
+.order-form-thanks {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: rgba(42, 28, 20, 0.35);
+}
+
+.order-form-thanks[hidden] {
+  display: none !important;
+}
+
+.order-form-thanks__card {
+  width: min(420px, 100%);
+  background: #ffffff;
+  border-radius: 1.8rem;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 16px 50px rgba(42, 28, 20, 0.18);
+  text-align: center;
+}
+
+.order-form-thanks__card p {
+  margin: 0 0 1.1rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.55rem;
+  line-height: 1.3;
+  color: #2a1c14;
+}
+
+.order-form-thanks__card button {
+  border: 0;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #ea6a12;
+}
+
 .cookies-widget {
   position: fixed;
   right: 1.25rem;

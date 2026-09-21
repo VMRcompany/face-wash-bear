@@ -57,17 +57,60 @@
 (() => {
   const form = document.querySelector("#order-form form");
   const phone = document.querySelector("#order-form input[name='phone']");
+  const thanks = document.getElementById("order-form-thanks");
+  const thanksClose = document.getElementById("order-form-thanks-close");
   if (!form || !phone) return;
 
   phone.addEventListener("input", function () {
     this.value = this.value.replace(/[^0-9+\-() ]/g, "");
   });
 
+  const showThanks = function () {
+    if (!thanks) return;
+    thanks.removeAttribute("hidden");
+  };
+
+  const hideThanks = function () {
+    if (!thanks) return;
+    thanks.setAttribute("hidden", "");
+  };
+
+  if (thanksClose) thanksClose.addEventListener("click", hideThanks);
+  if (thanks) {
+    thanks.addEventListener("click", function (event) {
+      if (event.target === thanks) hideThanks();
+    });
+  }
+
   form.addEventListener("submit", function (event) {
+    event.preventDefault();
     if (!form.checkValidity()) {
-      event.preventDefault();
       form.reportValidity();
+      return;
     }
+
+    const button = form.querySelector('button[type="submit"]');
+    if (button) button.disabled = true;
+
+    const data = new FormData(form);
+    data.append("email_to", "elena@face-wash-bear.ru");
+
+    fetch("https://formsubmit.co/ajax/elena@face-wash-bear.ru", {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: data
+    })
+      .then(function () {
+        form.reset();
+        showThanks();
+      })
+      .catch(function () {
+        form.reset();
+        showThanks();
+      })
+      .finally(function () {
+        if (button) button.disabled = false;
+      });
   });
 })();
 
