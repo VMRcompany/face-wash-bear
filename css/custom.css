@@ -335,6 +335,10 @@ header, main, footer {
   html { scroll-behavior: auto; }
 }
 
+#order-form {
+  position: relative;
+}
+
 #order-form .order-form-card {
   max-width: 1180px;
   margin: 0 auto;
@@ -417,6 +421,45 @@ header, main, footer {
     min-height: 240px;
     height: 240px;
   }
+}
+
+#cookie-local-popup {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+  width: 280px;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+#cookie-local-popup p {
+  margin: 0 0 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #2a1c14;
+}
+
+#cookie-local-ok {
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #ea6a12;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#cookie-local-ok:hover {
+  background-color: #c2410c;
+  transform: translateY(-1px);
 }
 
 .cookies-widget {
