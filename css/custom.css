@@ -335,10 +335,6 @@ header, main, footer {
   html { scroll-behavior: auto; }
 }
 
-#order-form {
-  position: relative;
-}
-
 #order-form .order-form-card {
   max-width: 1180px;
   margin: 0 auto;
@@ -423,42 +419,72 @@ header, main, footer {
   }
 }
 
-#cookie-popup {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  z-index: 100;
-  width: 280px;
-  padding: 15px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: opacity 0.35s ease;
+.cookies-widget {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 70;
+  width: min(360px, calc(100vw - 2rem));
 }
 
-#cookie-popup p {
-  margin: 0 0 12px;
-  font-size: 13px;
-  line-height: 1.5;
+.cookies-widget[hidden] {
+  display: none !important;
+}
+
+.cookies-widget.is-hiding .cookies-widget__card {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.cookies-widget__card {
+  background: #ffffff;
+  border: 1px solid #ffedd5;
+  border-radius: 1.8rem;
+  padding: 1.15rem 1.25rem;
+  box-shadow: 0 12px 40px rgba(42, 28, 20, 0.12);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cookies-widget__title {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.35rem;
+  font-weight: 600;
   color: #2a1c14;
 }
 
-#cookie-popup-ok {
+.cookies-widget__text {
+  margin: 0.55rem 0 0.95rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: rgba(42, 28, 20, 0.72);
+}
+
+.cookies-widget__btn {
   border: 0;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  padding: 0.55rem 1.15rem;
-  font-size: 0.82rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  color: #fff;
+  color: #ffffff;
   background-color: #ea6a12;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#cookie-popup-ok:hover {
+.cookies-widget__btn:hover {
   background-color: #c2410c;
   transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .cookies-widget {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 5.5rem;
+    width: auto;
+  }
 }

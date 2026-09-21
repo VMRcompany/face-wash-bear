@@ -72,21 +72,23 @@
 })();
 
 (() => {
-  const popup = document.getElementById("cookie-popup");
-  const ok = document.getElementById("cookie-popup-ok");
-  if (!popup || !ok) return;
+  const widget = document.getElementById("cookies-widget");
+  const accept = document.getElementById("cookies-accept");
+  if (!widget || !accept) return;
 
-  if (window.localStorage.getItem("cookie_form_accepted") === "true") {
-    popup.style.display = "none";
+  if (window.localStorage.getItem("cookies_accepted") === "true") {
+    widget.setAttribute("hidden", "");
     return;
   }
 
-  ok.addEventListener("click", function () {
-    window.localStorage.setItem("cookie_form_accepted", "true");
-    popup.style.opacity = "0";
+  widget.removeAttribute("hidden");
+
+  accept.addEventListener("click", function () {
+    window.localStorage.setItem("cookies_accepted", "true");
+    widget.classList.add("is-hiding");
     window.setTimeout(function () {
-      popup.style.display = "none";
-    }, 350);
+      widget.setAttribute("hidden", "");
+    }, 300);
   });
 })();
 
