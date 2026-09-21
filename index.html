@@ -429,12 +429,12 @@
             <img src="images/serum.png" alt="Сыворотка FACE WASH BEAR" class="order-form-photo">
           </div>
           <div class="order-form-content">
-            <h2>Влюбите себя в собственное отражение</h2>
-            <p>Запишитесь на первый смарт-уход под ключ. Оставьте контакты, и мы подберем удобное время.</p>
+            <h2 class="font-serif text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">Влюбите себя в собственное отражение</h2>
+            <p class="mt-5 leading-relaxed text-ink/75">Запишитесь на первый смарт-уход под ключ. Оставьте контакты, и мы подберем удобное время.</p>
             <form action="#" method="post">
               <input type="text" name="name" required placeholder="Ваше имя" autocomplete="name">
               <input type="tel" name="phone" required placeholder="+7 (_) _--" pattern="^(\+7|8)?\s?\(?\d{3}\)?\s?\d{3}-?\d{2}-?\d{2}$" title="Пожалуйста, введите корректный номер телефона" autocomplete="tel" inputmode="tel">
-              <button type="submit" class="btn-primary">Записаться на процедуру</button>
+              <button type="submit" class="btn-primary inline-flex items-center justify-center rounded-full bg-orange-700 px-5 py-2.5 text-sm font-semibold text-white">Записаться на процедуру</button>
             </form>
             <p class="order-form-legal">Нажимая на кнопку, вы даете согласие на обработку персональных данных в соответствии с <a href="/privacy-policy.html">Политикой конфиденциальности</a>.</p>
           </div>
@@ -606,6 +606,11 @@
     <a href="tel:+79193827537" class="flex items-center justify-center rounded-full bg-orange-700 px-5 py-3.5 text-sm font-semibold text-white shadow-xl shadow-orange-800/30">
       Записаться · +7 (919) 382-75-37
     </a>
+  </div>
+
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Уведомление об использовании cookie">
+    <p>Мы используем куки для улучшения работы сайта. Оставаясь на нашем ресурсе, вы соглашаетесь с <a href="/privacy-policy.html">Политикой конфиденциальности</a>.</p>
+    <button type="button" id="cookie-accept">Принять</button>
   </div>
 
   <script src="js/main.js"></script>

@@ -59,36 +59,36 @@
   const phone = document.querySelector("#order-form input[name='phone']");
   if (!form || !phone) return;
 
-  const formatRuPhone = (raw) => {
-    let digits = String(raw).replace(/\D/g, "");
-    if (digits.startsWith("8")) digits = "7" + digits.slice(1);
-    if (digits && digits.charAt(0) !== "7") digits = "7" + digits;
-    digits = digits.slice(0, 11);
-
-    let out = "+7";
-    if (digits.length > 1) out += " (" + digits.slice(1, 4);
-    if (digits.length >= 4) out += ")";
-    if (digits.length > 4) out += " " + digits.slice(4, 7);
-    if (digits.length > 7) out += "-" + digits.slice(7, 9);
-    if (digits.length > 9) out += "-" + digits.slice(9, 11);
-    return out;
-  };
-
-  phone.addEventListener("input", () => {
-    phone.value = formatRuPhone(phone.value);
+  phone.addEventListener("input", function () {
+    this.value = this.value.replace(/[^0-9+\-() ]/g, "");
   });
 
-  form.addEventListener("submit", (event) => {
-    const nameInput = form.querySelector("input[name='name']");
-    const phoneOk = phone.checkValidity();
-    const nameOk = nameInput.checkValidity();
-    if (!nameOk || !phoneOk) {
+  form.addEventListener("submit", function (event) {
+    if (!form.checkValidity()) {
       event.preventDefault();
-      if (!nameOk) nameInput.reportValidity();
-      else phone.reportValidity();
-      return;
+      form.reportValidity();
     }
-    event.preventDefault();
+  });
+})();
+
+(() => {
+  const banner = document.getElementById("cookie-banner");
+  const accept = document.getElementById("cookie-accept");
+  if (!banner || !accept) return;
+
+  if (window.localStorage.getItem("cookie-accepted") === "1") {
+    banner.classList.add("is-hidden");
+    return;
+  }
+
+  window.requestAnimationFrame(function () {
+    banner.classList.add("is-visible");
+  });
+
+  accept.addEventListener("click", function () {
+    window.localStorage.setItem("cookie-accepted", "1");
+    banner.classList.remove("is-visible");
+    banner.classList.add("is-hidden");
   });
 })();
 

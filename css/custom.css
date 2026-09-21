@@ -361,27 +361,13 @@ header, main, footer {
   height: 100%;
   min-height: 360px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 1.8rem;
 }
 
 #order-form .order-form-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-#order-form .order-form-content h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.2;
-  color: #2a1c14;
-}
-
-#order-form .order-form-content > p {
-  margin-top: 0.9rem;
-  color: rgba(42, 28, 20, 0.75);
-  line-height: 1.7;
 }
 
 #order-form form {
@@ -410,14 +396,9 @@ header, main, footer {
 }
 
 #order-form button[type="submit"] {
+  width: 100%;
   border: 0;
   cursor: pointer;
-  border-radius: 999px;
-  padding: 0.85rem 1.25rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #fff;
-  background-color: #ea6a12;
 }
 
 #order-form .order-form-legal {
@@ -441,5 +422,80 @@ header, main, footer {
   #order-form .order-form-photo {
     min-height: 240px;
     height: 240px;
+  }
+}
+
+.cookie-banner {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  color: #2a1c14;
+  border: 1px solid #ffedd5;
+  border-radius: 1.4rem;
+  box-shadow: 0 12px 40px rgba(42, 28, 20, 0.12);
+  opacity: 0;
+  transform: translateY(18px);
+  pointer-events: none;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.cookie-banner.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.cookie-banner.is-hidden {
+  opacity: 0;
+  transform: translateY(18px);
+  pointer-events: none;
+}
+
+.cookie-banner p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: rgba(42, 28, 20, 0.78);
+}
+
+.cookie-banner a {
+  color: #c2410c;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-banner button {
+  flex-shrink: 0;
+  border: 0;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #ea6a12;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cookie-banner button:hover {
+  background-color: #c2410c;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .cookie-banner {
+    flex-direction: column;
+    align-items: stretch;
+    bottom: 5.5rem;
   }
 }
