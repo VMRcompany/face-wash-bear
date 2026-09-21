@@ -74,9 +74,16 @@
 (() => {
   const banner = document.getElementById("cookie-banner");
   const accept = document.getElementById("cookie-accept");
+  const close = document.getElementById("cookie-close");
   if (!banner || !accept) return;
 
-  if (window.localStorage.getItem("cookie-accepted") === "1") {
+  const hideBanner = function () {
+    window.localStorage.setItem("cookie_accepted", "true");
+    banner.classList.remove("is-visible");
+    banner.classList.add("is-hidden");
+  };
+
+  if (window.localStorage.getItem("cookie_accepted") === "true") {
     banner.classList.add("is-hidden");
     return;
   }
@@ -85,10 +92,7 @@
     banner.classList.add("is-visible");
   });
 
-  accept.addEventListener("click", function () {
-    window.localStorage.setItem("cookie-accepted", "1");
-    banner.classList.remove("is-visible");
-    banner.classList.add("is-hidden");
-  });
+  accept.addEventListener("click", hideBanner);
+  if (close) close.addEventListener("click", hideBanner);
 })();
 

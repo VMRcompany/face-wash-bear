@@ -408,12 +408,6 @@ header, main, footer {
   color: rgba(42, 28, 20, 0.55);
 }
 
-#order-form .order-form-legal a {
-  color: #c2410c;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
 @media (max-width: 768px) {
   #order-form .order-form-grid {
     grid-template-columns: 1fr;
@@ -427,22 +421,20 @@ header, main, footer {
 
 .cookie-banner {
   position: fixed;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  left: auto;
   z-index: 60;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 1rem 1.25rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.75rem 1rem;
+  width: min(380px, calc(100vw - 2.5rem));
+  padding: 1.1rem 2.4rem 1.1rem 1.15rem;
   background: #fff;
   color: #2a1c14;
-  border: 1px solid #ffedd5;
-  border-radius: 1.4rem;
-  box-shadow: 0 12px 40px rgba(42, 28, 20, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(42, 28, 20, 0.14);
   opacity: 0;
   transform: translateY(18px);
   pointer-events: none;
@@ -463,39 +455,50 @@ header, main, footer {
 
 .cookie-banner p {
   margin: 0;
+  flex: 1 1 180px;
   font-size: 0.85rem;
   line-height: 1.55;
   color: rgba(42, 28, 20, 0.78);
 }
 
-.cookie-banner a {
-  color: #c2410c;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+.cookie-banner-close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.45rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  border: 0;
+  background: transparent;
+  color: rgba(42, 28, 20, 0.45);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
 }
 
-.cookie-banner button {
+.cookie-banner #cookie-accept {
   flex-shrink: 0;
   border: 0;
   cursor: pointer;
   border-radius: 999px;
-  padding: 0.7rem 1.2rem;
-  font-size: 0.85rem;
+  padding: 0.55rem 1.05rem;
+  font-size: 0.82rem;
   font-weight: 600;
   color: #fff;
   background-color: #ea6a12;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
-.cookie-banner button:hover {
+.cookie-banner #cookie-accept:hover {
   background-color: #c2410c;
-  transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {
   .cookie-banner {
-    flex-direction: column;
-    align-items: stretch;
-    bottom: 5.5rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: none;
+    border-radius: 12px 12px 0 0;
   }
 }
