@@ -8,36 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            orange: {
-              50: "#fff7f1",
-              100: "#ffefe4",
-              200: "#ffd8c2",
-              300: "#ffb894",
-              400: "#ff9448",
-              500: "#f97316",
-              600: "#ea6a12",
-              700: "#c2410c",
-              800: "#9a3412"
-            },
-            ink: "#2a1c14"
-          },
-          fontFamily: {
-            serif: ["Cormorant Garamond", "serif"],
-            sans: ["Manrope", "sans-serif"]
-          },
-          maxWidth: {
-            site: "1180px"
-          }
-        }
-      }
-    };
-  </script>
+  <link rel="stylesheet" href="css/tailwind.css">
   <link rel="stylesheet" href="css/custom.css">
 </head>
 <body class="font-sans antialiased">
@@ -519,8 +490,7 @@
         <div class="mt-14 grid gap-6 md:grid-cols-2">
           <article class="review-card reveal rounded-[1.8rem] bg-white p-7 ring-1 ring-orange-100">
             <div class="flex items-center gap-4">
-              <!-- Фото / аватар клиента Елены Важениной: загрузите файл images/avatar-1.jpg (квадрат 200×200, портрет) -->
-              <img src="images/avatar-1.jpg" onerror="this.onerror=null;this.src='https://picsum.photos/seed/client-elena/200/200'" alt="Елена Важенина" class="h-14 w-14 rounded-full object-cover">
+              <img src="images/avatar-1.jpg" alt="Елена Важенина" width="200" height="200" class="h-14 w-14 shrink-0 rounded-full object-cover">
               <div>
                 <h3 class="font-medium">Елена Важенина</h3>
                 <p class="text-xs text-orange-700">★★★★★ · Яндекс Карты</p>
@@ -531,8 +501,7 @@
 
           <article class="review-card reveal rounded-[1.8rem] bg-white p-7 ring-1 ring-orange-100">
             <div class="flex items-center gap-4">
-              <!-- Фото / аватар клиента Екатерины Тетёркиной: загрузите файл images/avatar-2.jpg (квадрат 200×200, портрет) -->
-              <img src="images/avatar-2.jpg" onerror="this.onerror=null;this.src='https://picsum.photos/seed/client-ekaterina/200/200'" alt="Екатерина Тетёркина" class="h-14 w-14 rounded-full object-cover">
+              <img src="images/avatar-2.jpg" alt="Екатерина Тетёркина" width="200" height="200" class="h-14 w-14 shrink-0 rounded-full object-cover">
               <div>
                 <h3 class="font-medium">Екатерина Тетёркина</h3>
                 <p class="text-xs text-orange-700">★★★★★ · Яндекс Карты</p>
@@ -543,8 +512,7 @@
 
           <article class="review-card reveal rounded-[1.8rem] bg-white p-7 ring-1 ring-orange-100">
             <div class="flex items-center gap-4">
-              <!-- Фото / аватар клиента Светланы Лоскутовой: загрузите файл images/avatar-3.jpg (квадрат 200×200, портрет) -->
-              <img src="images/avatar-3.jpg" onerror="this.onerror=null;this.src='https://picsum.photos/seed/client-svetlana/200/200'" alt="Светлана Лоскутова" class="h-14 w-14 rounded-full object-cover">
+              <img src="images/avatar-3.jpg" alt="Светлана Лоскутова" width="200" height="200" class="h-14 w-14 shrink-0 rounded-full object-cover">
               <div>
                 <h3 class="font-medium">Светлана Лоскутова</h3>
                 <p class="text-xs text-orange-700">★★★★★ · Яндекс Карты</p>
@@ -555,8 +523,7 @@
 
           <article class="review-card reveal rounded-[1.8rem] bg-white p-7 ring-1 ring-orange-100">
             <div class="flex items-center gap-4">
-              <!-- Фото / аватар клиента Лоры Изюровой: загрузите файл images/avatar-4.jpg (квадрат 200×200, портрет) -->
-              <img src="images/avatar-4.jpg" onerror="this.onerror=null;this.src='https://picsum.photos/seed/client-lora/200/200'" alt="Лора Изюрова" class="h-14 w-14 rounded-full object-cover">
+              <img src="images/avatar-4.jpg" alt="Лора Изюрова" width="200" height="200" class="h-14 w-14 shrink-0 rounded-full object-cover">
               <div>
                 <h3 class="font-medium">Лора Изюрова</h3>
                 <p class="text-xs text-orange-700">★★★★★ · Яндекс Карты</p>
@@ -645,7 +612,16 @@
         buttons[i].setAttribute("aria-selected", on ? "true" : "false");
       }
       for (var j = 0; j < panels.length; j++) {
-        panels[j].classList.toggle("is-open", panels[j].id === categoryId);
+        var open = panels[j].id === categoryId;
+        panels[j].classList.toggle("is-open", open);
+        if (!open) continue;
+        panels[j].querySelectorAll("img").forEach(function (img) {
+          if (img.complete && img.naturalWidth > 0) return;
+          var src = img.getAttribute("src");
+          if (!src) return;
+          img.src = "";
+          img.src = src;
+        });
       }
     }
 

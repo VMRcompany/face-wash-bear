@@ -138,6 +138,13 @@ header, main, footer {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+.review-card img {
+  width: 3.5rem;
+  height: 3.5rem;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
 .service-card:hover,
 .review-card:hover,
 .usp-card:hover {
