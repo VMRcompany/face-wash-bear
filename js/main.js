@@ -91,7 +91,23 @@
 
     const nameInput = form.querySelector('input[name="name"]');
     const button = form.querySelector('button[type="submit"]');
+    const name = nameInput ? nameInput.value : "";
+    const phoneValue = phone.value;
     if (button) button.disabled = true;
+
+    let settled = false;
+
+    function finishThanks() {
+      if (settled) return;
+      settled = true;
+      form.reset();
+      showThanks();
+      if (button) button.disabled = false;
+    }
+
+    // Сервер часто отвечает десятки секунд, хотя заявку уже принял.
+    // Благодарность показываем сразу, отправка продолжается сама.
+    const thanksTimer = window.setTimeout(finishThanks, 700);
 
     fetch(form.action, {
       method: "POST",
@@ -100,18 +116,24 @@
         Accept: "application/json"
       },
       body: JSON.stringify({
-        name: nameInput ? nameInput.value : "",
-        phone: phone.value,
+        name: name,
+        phone: phoneValue,
         _subject: "Заявка с сайта FACE WASH BEAR"
       })
     })
       .then(function (response) {
-        if (response.ok) {
-          form.reset();
-          showThanks();
-        }
+        if (!response.ok) throw new Error("status");
+        return response.json();
       })
-      .finally(function () {
+      .then(function (data) {
+        const queued = data && /activat/i.test(String(data.message || ""));
+        if (!data || (String(data.success) !== "true" && !queued)) throw new Error("send");
+        window.clearTimeout(thanksTimer);
+        finishThanks();
+      })
+      .catch(function () {
+        if (settled) return;
+        window.clearTimeout(thanksTimer);
         if (button) button.disabled = false;
       });
   });
